@@ -1,0 +1,281 @@
+*{
+  margin: 0;
+  font-family: "montserrat";
+}
+.primary_bgcolor{
+  background-color: #6c63ff;
+}
+.primary_color{
+  color: #6c63ff;
+}
+.primary_outline{
+  border-color: #6c63ff;
+}
+.nav{
+  font-family: "prompt";
+  font-size: 1.1em;
+}
+.jumbotron{
+  background-color: transparent;
+}
+.snippets img{
+  margin: .5em 37.5%;
+}
+.snippets button, .cards img{
+  margin: 0 12.5%;
+}
+.helping_hand img{
+  margin: 0 25%;
+}
+.cards p{
+  font-size: 1.3em;
+  color: #ddd;
+}
+.cards i{
+  font-size: 1.5em;
+  padding: 0 .5em;
+  cursor: pointer;
+}
+ .team img{
+   margin: 1em 25%;
+ }
+ .secondary_bgcolor{
+   background-color: #3f3d56;
+ }
+ .secondary_border{
+   border-color: #3f3d56;
+ }
+ .secondary_color{
+   color: #3f3d56;
+ }
+ .subscribe{
+   border-top-left-radius: 0;
+   border-bottom-left-radius: 0;
+ }
+.formInput{
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.footerContainer{
+  width: 90%;
+}
+footer p, footer li, footer a, footer i{
+  color: #ddd;
+}
+.follow_icons div{
+  width: 25%;
+  text-align: center;
+}
+.follow i{
+  font-size: 1.4em;
+}
+.follow p{
+  font-size: .7em;
+}
+.questionsIndicator{
+  top: 0;
+}
+.story_section{
+  position: relative;
+}
+.left_side, .main_side{
+  position: fixed;
+  top: 12%;
+  height: 88%;
+  box-shadow: -.1em .2em 1.2em #d0d0d0;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+}
+.left_side{
+  left: 2%;
+  width: 30%;
+  border-radius: 1em;
+  overflow: hidden;
+}
+.main_side{
+  width: 60%;
+  left: 35%;
+}
+.avatar img{
+  border-radius: 50%;
+}
+.left_side .fa{
+  font-size: 1.5em;
+}
+.left_side p, .right_side p{
+  margin-bottom: 0;
+}
+.grouping{
+  box-shadow: -.1em .2em .8em #d0d0d0;
+  margin: .5em 0;
+}
+.notif{
+  border-radius: .5em;
+}
+.text_grey{
+  color: #d0d0d0;
+}
+.bg-grey{
+  background-color: #d0d0d0;
+}
+.box_shadowed{
+  box-shadow: -.1em .2em 2em #8f8f8f;
+}
+.box_shadowed_light{
+  box-shadow: -.1em .5em 1em rgba(0,0,0,.2);
+}
+.form_div{
+  padding: 0;
+}
+.main_side{
+  overflow-y: scroll;
+}
+.story_icons{
+  font-size: 1.3em;
+}
+.subforum-row{
+  width: 31%;
+}
+.story_page{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)) ,url("../../images/girly.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.submit_error{
+  display: none;
+}
+.submit_error.visible_error{
+  display: block;
+}
+
+#yes_btn{
+  opacity: 0;
+  animation-name: animate_btn;
+  animation-delay: 4s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+#navOpen{
+  font-size: 1.5em;
+  color: #6c63ff;
+}
+.hover_list_parent{
+  position: relative;
+}
+.hover_list{
+  position: absolute;
+  top: 2em;
+  display: none;
+  background-color: white;
+}
+.hover_list_parent:hover .hover_list{
+  display: block;
+}
+@keyframes animate_btn {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+.forum_body{
+  white-space: pre-line;
+}
+.write_comment{
+  position: fixed;
+  bottom: 0;
+}
+@media (max-width: 991px) {
+  .hover_list_parent{
+      height: 4em;
+      overflow: hidden;
+      position: relative;
+      transition: .3s;
+  }
+  .hover_list_parent:hover{
+      height: 15em;
+      transition: 0.3s;
+  }
+  .hover_list_parent:hover .hover_list{
+    background-color: transparent;
+    padding: 0;
+  }
+  #navSide{
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 0%;
+    height: 100%;
+    background: rgba(63,58,96,0.7);
+    z-index: 999;
+    overflow: hidden;
+    padding: 0;
+  }
+#navSide.visibleNow{
+    width: 50%;
+    transition: .5s;
+  }
+  #navOpen:hover{
+    cursor: pointer;
+  }
+  #navClose{
+    color: #fff;
+    width: 10%;
+    font-size: 1.5em;
+    margin-top: .5em;
+    margin-left: 90%;
+  }
+  #navClose:hover{
+    cursor: pointer;
+  }
+  #navSide.visibleNow{
+    width: 50%;
+    transition: .5s;
+  }
+  #navSide ul{
+    display: block;
+    margin: 4em auto;
+  }
+  #navSide li{
+    text-align: center;
+    padding: 1em 0;
+  }
+  #navSide a{
+    color: #fff;
+  }
+  #navSide li:hover{
+    background-color: #3f3d56;
+    border-left: 1.5em solid #d2d2d2;
+    cursor: pointer;
+    transition: .3s;
+  }
+  .main_side{
+    position: relative;
+    overflow-y: visible;
+    width: 100%;
+    left: 0;
+    margin: 2em auto;
+    top: 0;
+  }
+}
+@media (max-width: 768px) {
+  #navSide.visibleNow{
+    width: 100%;
+  }
+}
+@media (max-width: 570px) {
+  .display-6{
+    font-size: 1.5em;
+  }
+}
+@media (max-width: 400px) {
+  .display-5{
+    font-size: 1.5em;
+  }
+  .display-6{
+    font-size: 1.3em;
+  }
+}
