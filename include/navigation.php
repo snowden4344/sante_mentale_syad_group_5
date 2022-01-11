@@ -1,7 +1,3 @@
-<?php
-    include "include/config.php";
-?>
-
 <nav class = "navbar navbar-expand-lg navbar-expand-xl pt-2 col-12 mx-auto bg-white sticky-top">
     <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-5 mx-auto">
         <a href="home.php" class="col-12">
@@ -23,7 +19,4 @@
         </ul>
     </div>
     <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-5">
-        <h5 class="primary_color text-capitalize"><a href="story_page.php" class="primary_color"><?php echo $GLOBALS['methods']->get_different_element($_SESSION['user_name'], "user_name", "full_name", "users") ?></a></h5>
-    </div>
-    <i class="fa fa-navicon d-xl-none d-lg-none text-center" id="navOpen"></i>
-</nav>
+

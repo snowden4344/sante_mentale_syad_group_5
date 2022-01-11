@@ -137,7 +137,7 @@
         }
 
     }
-    $GLOBALS['db_connect'] = new EstablishConnection("localhost","root","","main_db","users");
+    $GLOBALS['db_connect'] = new EstablishConnection("localhost","id18258730_sante_mentale","syadgroup5@SanteMentale","id18258730_main_db","users");
     $GLOBALS['purify'] = new PurifyInput();
     $GLOBALS['methods'] = new CommonSQLMethods();
     $GLOBALS['db_connect']->connect_mysqli();
