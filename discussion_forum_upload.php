@@ -18,10 +18,10 @@
     
         if(empty($forum_title_error) && empty($forum_error) && empty($forum_description_error)) {
             $sql = "INSERT INTO forum_tb (forum_title, forum_description, forum_body, user_name) VALUES ('$forum_title', '$forum_description' , '$forum_body', '$user_name')";
-            if ($GLOBALS['connection']->query($sql) == true)
-                echo "Success";
-            else
-                echo "Failure: " . $GLOBALS['connection']->error;
+            if ($GLOBALS['connection']->query($sql) == true){
+                header("location: direct_forum.php?forum_title=".$forum_title);
+                exit();
+            }
         }
     }
 ?>
