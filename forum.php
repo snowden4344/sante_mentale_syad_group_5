@@ -1,5 +1,5 @@
 <?php
-//    include "include/config.php";
+    include "include/config.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,6 +11,10 @@
     <body>
         <!-- Navigation begins -->
         <?php include "include/navigation.php"; ?>
+        <h5 class="primary_color text-capitalize"><a href="story_page.php" class="primary_color"><?php echo $GLOBALS['methods']->get_different_element($_SESSION['user_name'], "user_name", "full_name", "users") ?></a></h5>
+            </div>
+            <i class="fa fa-navicon d-xl-none d-lg-none text-center" id="navOpen"></i>
+        </nav>
         <!-- Navigation ends -->
 
         <!-- Discussion formum begins -->

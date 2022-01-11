@@ -1,44 +1,47 @@
+<?php
+
+    include "include/config.php";
+    $GLOBALS['db_connect']->setTableName("questionnaire");
+    $error = "";
+    $user_gender = $user_trouble = $user_aid = $user_therapist_decision = $user_therapist_gender = $user_trouble_time = "";
+
+    if(isset($_POST['submit'])){
+
+        $user_gender = $_POST['gender_selection'];
+        $user_trouble = $_POST['trouble_selection'];
+        $user_trouble_time = $_POST['time_selection'];
+        $user_aid = $_POST['aid_yourself'];
+        $user_therapist_decision = $_POST['therapist'];
+        $user_therapist_gender = $_POST['therapist_choice'];
+        $user_name = $_SESSION['user_name'];
+
+        if($GLOBALS['methods']->check_if_exists($_SESSION['user_name'], "user_name", "questionnaire")){
+            $sql = "INSERT INTO questionnaire (user_gender, user_trouble, user_trouble_time, user_aid, user_therapist, user_therapist_choice, user_name) 
+                    VALUES ('$user_gender', '$user_trouble', '$user_trouble_time', '$user_aid', '$user_therapist_decision', '$user_therapist_gender', '$user_name')";
+            $GLOBALS['connection']->query($sql);
+            header("location: home.php");
+            exit();
+        }
+       else
+           $error = "You already submitted your questionnaire";
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
     <?php include "include/metas.php"; ?>
-    <title>Home | Sante Mentale</title>
+    <title>Questionnaire | Sante Mentale</title>
     <?php include "include/css.php"; ?>
     </head>
     <body>
         <!-- Navigation begins -->
         <?php include "include/navigation.php"; ?>
-
-        <?php
-
-            $GLOBALS['db_connect']->setTableName("questionnaire");
-            $error = "";
-            $user_gender = $user_trouble = $user_aid = $user_therapist_decision = $user_therapist_gender = $user_trouble_time = "";
-
-            if(isset($_POST['submit'])){
-
-                $user_gender = $_POST['gender_selection'];
-                $user_trouble = $_POST['trouble_selection'];
-                $user_trouble_time = $_POST['time_selection'];
-                $user_aid = $_POST['aid_yourself'];
-                $user_therapist_decision = $_POST['therapist'];
-                $user_therapist_gender = $_POST['therapist_choice'];
-                $user_name = $_SESSION['user_name'];
-
-                if($GLOBALS['methods']->check_if_exists($_SESSION['user_name'], "user_name", "questionnaire")){
-                    $sql = "INSERT INTO questionnaire (user_gender, user_trouble, user_trouble_time, user_aid, user_therapist, user_therapist_choice, user_name) 
-                            VALUES ('$user_gender', '$user_trouble', '$user_trouble_time', '$user_aid', '$user_therapist_decision', '$user_therapist_gender', '$user_name')";
-                    $GLOBALS['connection']->query($sql);
-                    header("location: home.php");
-                    exit();
-                }
-               else
-                   $error = "You already submitted your questionnaire";
-            }
-
-
-
-        ?>
+        <h5 class="primary_color text-capitalize"><a href="story_page.php" class="primary_color"><?php echo $GLOBALS['methods']->get_different_element($_SESSION['user_name'], "user_name", "full_name", "users") ?></a></h5>
+            </div>
+            <i class="fa fa-navicon d-xl-none d-lg-none text-center" id="navOpen"></i>
+        </nav>
         <!-- Navigation ends -->
 
         <div class="submit_error <?php echo empty($error) ? '' : 'visible_error'; ?> ">

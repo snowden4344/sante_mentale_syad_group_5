@@ -1,5 +1,7 @@
 <?php
-
+    
+    include "include/config.php";
+    
     if (empty($_GET['forum_title'])){
         header("location: forum.php");
     }
@@ -17,6 +19,10 @@
     <body>
         <!-- Navigation begins -->
         <?php include "include/navigation.php";?>
+        <h5 class="primary_color text-capitalize"><a href="story_page.php" class="primary_color"><?php echo $GLOBALS['methods']->get_different_element($_SESSION['user_name'], "user_name", "full_name", "users") ?></a></h5>
+            </div>
+            <i class="fa fa-navicon d-xl-none d-lg-none text-center" id="navOpen"></i>
+        </nav>
         <!-- Navigation ends -->
         <?php
         //    include "include/config.php";
@@ -31,7 +37,7 @@
             $forum_title = $_SESSION['forum_title'];
 
 
-        $GLOBALS['forum_connection'] = new mysqli("localhost", "root", "", "forum_comments");
+        $GLOBALS['forum_connection'] = new mysqli("localhost", "id18258730_sante_mentale_v2", "syadgroup5@SanteMentale", "id18258730_forum_comments");
 
         $current_comment = "";
         $current_user = "";
